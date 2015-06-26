@@ -1,46 +1,12 @@
-/*  Equal height blocks :: http://css-tricks.com/equal-height-blocks-in-rows/ */
+$(document).ready(function() {
 
-equalheight = function(container){
-    var currentTallest = 0,
-        currentRowStart = 0,
-        rowDivs = new Array(),
-        $el,
-        topPosition = 0;
-    $(container).each(function() {
-        $el = $(this);
-        $($el).height('auto')
-        topPostion = $el.position().top;
-
-        if (currentRowStart != topPostion) {
-            for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
-                rowDivs[currentDiv].height(currentTallest);
-            }
-            rowDivs.length = 0; // empty the array
-            currentRowStart = topPostion;
-            currentTallest = $el.height();
-            rowDivs.push($el);
-        } else {
-            rowDivs.push($el);
-            currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
-        }
-        for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
-            rowDivs[currentDiv].height(currentTallest);
-        }
+    $("#bs-gallery-carousel").owlCarousel({
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        items : 3,
+        itemsDesktop : false,
+        itemsDesktopSmall : [1080, 2],
+        itemsTablet : [750, 1],
+        itemsMobile : false
     });
-}
 
-$(window).load(function() {
-    equalheight('.ba-grid .du-item .du-desc');
 });
-
-$(window).resize(function(){
-    equalheight('.ba-grid .du-item .du-desc');
-});
-
-/* Menu toggle function */
-jQuery(function($){
-    $('.du-menu-toggle, .du-menu-overlay').click(function(){
-        $('body').toggleClass('du-menu-open');
-    });
-});
-
