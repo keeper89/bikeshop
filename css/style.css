@@ -224,12 +224,12 @@ button[type="submit"]:active {
 }
 .bs-slider .carousel-control.left .bs-chevron {
   background-position: 0 0;
-  left: 50%;
+  left: 35px;
   margin-left: -29px;
 }
 .bs-slider .carousel-control.right .bs-chevron {
   background-position: -58px 0;
-  right: 50%;
+  right: 35px;
   margin-right: -29px;
 }
 .bs-slider .carousel-control.left:hover .bs-chevron,
@@ -569,6 +569,22 @@ button[type="submit"]:active {
   padding: 25px 24px;
   text-transform: uppercase;
   margin-bottom: 22px;
+  min-width: 450px;
+  font-style: italic;
+}
+@media (max-width: 500px) {
+  .bs-form input,
+  .bs-form textarea,
+  .bs-form .btn {
+    width: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    margin: 10px auto;
+  }
+  .bs-form textarea,
+  .bs-form .btn {
+    transform: translate(40%, 0);
+  }
 }
 .bs-form .btn {
   text-transform: uppercase;
