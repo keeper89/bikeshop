@@ -25,6 +25,7 @@ button[type="submit"] {
 /* Navigation bar */
 .bs-navigation {
     z-index: 10;
+    background: none;
 }
 .bs-logo {
     position: relative;
@@ -91,8 +92,8 @@ button[type="submit"] {
         border-bottom-right-radius: 0;
     }
 }
-@media(max-width: 764px) {
-    .bs-nav:hover{
+@media (max-width: 764px) {
+    .bs-nav:hover {
         .navbar-toggle span.icon-bar {
             background-color: @bs-black;
         }
@@ -119,7 +120,6 @@ button[type="submit"] {
                 left: -180px;
                 border-top-left-radius: 8px;
                 border-top-right-radius: 0;
-
             }
         }
     }
@@ -177,6 +177,15 @@ button[type="submit"] {
     img {
         width: 100%;
     }
+    .bs-overlay {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(54, 8, 8, .49);
+    }
     .carousel-indicators {
         width: 100%;
         left: 0;
@@ -195,15 +204,6 @@ button[type="submit"] {
                 background: @bs-yellow;
             }
         }
-    }
-    .bs-overlay {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(54, 8, 8, .49);
     }
     .carousel-control {
         z-index: 5;
@@ -252,17 +252,17 @@ button[type="submit"] {
     text-align: center;
     width: 50%;
     margin-left: -25%;
-    @media(max-width: 1100px) {
+    @media (max-width: 1100px) {
         top: 20%;
     }
     h1 {
         margin: 75px 0 20px 0;
         color: @bs-white;
         font-weight: bold;
-        @media(max-width: 1000px) {
+        @media (max-width: 1000px) {
             font-size: 28px;
         }
-        @media(max-width: 550px) {
+        @media (max-width: 550px) {
             font-size: 15px;
         }
     }
@@ -271,13 +271,13 @@ button[type="submit"] {
         color: @bs-white;
         font-weight: 100;
         margin: 0 0 30px 0;
-        @media(max-width: 1000px) {
+        @media (max-width: 1000px) {
             font-size: 20px;
         }
-        @media(max-width: 700px) {
+        @media (max-width: 700px) {
             font-size: 15px;
         }
-        @media(max-width: 550px) {
+        @media (max-width: 550px) {
             font-size: 12px;
         }
         .bs-yellow {
@@ -285,7 +285,7 @@ button[type="submit"] {
         }
     }
     .btn {
-        @media(max-width: 850px) {
+        @media (max-width: 850px) {
             display: none;
         }
         padding: 18px 26px 16px 26px;
@@ -308,7 +308,7 @@ button[type="submit"] {
     left: 50%;
     margin: 0 0 33px -33px;
     background: url("../img/scroll-icon-link.png") center center no-repeat;
-    @media(max-width: 650px) {
+    @media (max-width: 650px) {
         display: none;
     }
     a {
@@ -328,10 +328,10 @@ button[type="submit"] {
         font-weight: bold;
         text-align: center;
         margin: 75px 0;
-        @media(max-width: 989px) {
+        @media (max-width: 989px) {
             margin: 50px 0;
         }
-        @media(max-width: 650px) {
+        @media (max-width: 650px) {
             margin: 25px 0;
         }
     }
@@ -341,10 +341,10 @@ button[type="submit"] {
     cursor: pointer;
     text-align: center;
     margin-bottom: 150px;
-    @media(max-width: 989px) {
+    @media (max-width: 989px) {
         margin-bottom: 100px;
     }
-    @media(max-width: 650px) {
+    @media (max-width: 650px) {
         margin-bottom: 50px;
     }
     img {
@@ -364,10 +364,10 @@ button[type="submit"] {
         font-weight: bold;
         color: @bs-yellow;
         margin: 140px 0 10px 0;
-        @media(max-width: 1200px) {
+        @media (max-width: 1200px) {
             margin-top: 70px;
         }
-        @media(max-width: 989px) {
+        @media (max-width: 989px) {
             margin-top: 45px;
         }
     }
@@ -375,29 +375,34 @@ button[type="submit"] {
         font-weight: 100;
         color: @bs-white;
         margin: 0 0 24px 0;
-        @media(max-width: 989px) {
+        @media (max-width: 989px) {
             margin-bottom: 10px;
         }
-        @media(max-width: 530px) {
+        @media (max-width: 530px) {
             display: none;
         }
     }
     .btn {
         opacity: 0;
         text-align: center;
+        width: 123px;
+        margin: 0 auto;
         text-transform: uppercase;
         background: none;
+        color: @bs-white;
         border: 3px solid @bs-white;
-        padding: 15px 20px 13px 20px;
+        padding: 15px 10px 13px 10px;
         -webkit-transition: opacity .3s;
         -moz-transition: opacity .3s;
         transition: opacity .3s;
-        @media(max-width: 650px) {
+        @media (max-width: 650px) {
             display: none;
         }
         &:hover,
         &:active {
             background: none;
+            color: @bs-white;
+            border: 3px solid @bs-white;
         }
     }
 }
@@ -406,9 +411,7 @@ button[type="submit"] {
     position: absolute;
     width: 100%;
     top: 0;
-    left: 50%;
     bottom: 0;
-    transform: translate(-50%, 0);
     &:before {
         content: '';
         position: absolute;
@@ -427,17 +430,14 @@ button[type="submit"] {
 //
 /* Gallery */
 .bs-gallery {
-    .owl-controls.clickable {
-        display: none !important;
-    }
     h2 {
         font-weight: bold;
         text-align: center;
         margin: 75px 0 50px 0;
-        @media(max-width: 989px) {
+        @media (max-width: 989px) {
             margin: 50px 0 25px 0;
         }
-        @media(max-width: 650px) {
+        @media (max-width: 650px) {
             margin: 25px 0;
         }
     }
@@ -469,18 +469,20 @@ button[type="submit"] {
             text-transform: uppercase;
             line-height: 43px;
             padding: 0 40px 0 20px;
-            @media(max-width: 1150px) {
+            @media (max-width: 1150px) {
                 padding: 0 30px 0 10px;
             }
             height: 43px;
             border-radius: 8px;
+            font-weight: bold;
             -webkit-appearance: none;
             -moz-appearance: none;
+            appearance: none;
             text-indent: 1px;
             text-overflow: '';
             background: url("../img/select-dropdown.png") 90% center no-repeat;
-            option:hover {
-                background: @bs-black;
+            &::-ms-expand {
+                display: none;
             }
         }
         button[type="submit"] {
@@ -498,6 +500,7 @@ button[type="submit"] {
 .bs-contact {
     background: url("../img/conact-us-bg.jpg") center top no-repeat;
     padding-top: 65px;
+    padding-bottom: 83px;
     h2 {
         text-transform: uppercase;
         text-align: center;
@@ -513,54 +516,46 @@ button[type="submit"] {
 .bs-form {
     padding: 0;
     margin: 0 auto;
-    width: 450px;
-    input {
+    max-width: 450px;
+    .form-control {
         text-transform: uppercase;
         font-style: italic;
-        padding: 0 24px;
+        max-width: 450px;
+        width: 100%;
         margin: 0 0 21px 0;
-        &[type="text"] {
-            width: 100%;
-            @media(min-width: 769px) {
-                width: 212px;
-                &:first-of-type {
-                    margin-right: 24px;
-                }
-            }
-        }
-        &[type="email"] {
-            width: 450px;
+        padding: 25px 24px;
+        &:focus {
+            -webkit-box-shadow: inset 1px 1px 8px @bs-yellow;
+            -moz-box-shadow: inset 1px 1px 8px @bs-yellow;
+            box-shadow: inset 1px 1px 8px @bs-yellow;
         }
     }
     textarea {
-        padding: 25px 24px;
-        text-transform: uppercase;
+        display: block;
         margin-bottom: 22px;
-        min-width: 450px;
-        font-style: italic;
+        min-width: 100%;
+        max-width: 450px;
     }
-    @media(max-width: 500px) {
-        input,
-        textarea,
-        .btn {
-            width: 100%;;
-            min-width: 250px;
-            max-width: 250px;
-            margin: 10px auto;
-        }
-        textarea,
-        .btn {
-            transform: translate(40%, 0);
-        }
+    #inputEmail {
+        width: 100%;
     }
     .btn {
         text-transform: uppercase;
+        display: block;
         font-weight: bold;
-        width: 100%;
+        width: 450px;
         border-radius: 8px;
         height: 43px;
         line-height: 43px;
-        margin-bottom: 84px;
+    }
+    @media (max-width: 500px) {
+        .btn,
+        .form-control {
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            margin: 0 auto 10px auto;
+        }
     }
 }
 //

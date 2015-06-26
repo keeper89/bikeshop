@@ -1,0 +1,38 @@
+/* Palette */
+@bs-white: #fff;
+@bs-black: #000;
+@bs-gray: #b7b7b7;
+@bs-yellow: #fcff19;
+//
+/* IE8 Fixes */
+.bs-nav-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.bs-cat-thumb {
+    .btn {
+        display: none;
+        color: @bs-gray;
+        border: 3px solid @bs-gray;
+        &:hover {
+            color: @bs-white;
+            border: 3px solid @bs-white;
+        }
+    }
+    &:hover .btn,
+    &:active .btn {
+        display: block;
+    }
+}
+.bs-item-desc form {
+    select {
+        background: none;
+        width: 100px;
+        max-width: 100px;
+    }
+    button[type="submit"] {
+        margin-top: 0;
+    }
+}

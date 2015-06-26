@@ -1,0 +1,29 @@
+/* Palette */
+/* IE8 Fixes */
+.bs-nav-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.bs-cat-thumb .btn {
+  display: none;
+  color: #b7b7b7;
+  border: 3px solid #b7b7b7;
+}
+.bs-cat-thumb .btn:hover {
+  color: #ffffff;
+  border: 3px solid #ffffff;
+}
+.bs-cat-thumb:hover .btn,
+.bs-cat-thumb:active .btn {
+  display: block;
+}
+.bs-item-desc form select {
+  background: none;
+  width: 100px;
+  max-width: 100px;
+}
+.bs-item-desc form button[type="submit"] {
+  margin-top: 0;
+}
